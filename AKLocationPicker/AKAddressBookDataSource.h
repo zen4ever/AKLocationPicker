@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AKLocationPickerController.h"
 
-@interface AKAddressBookDataSource : NSObject<UITableViewDataSource, UISearchDisplayDelegate>
+@interface AKAddressBookDataSource : NSObject<UITableViewDataSource, UISearchDisplayDelegate, AKLocationPickerSource>
 
 @end

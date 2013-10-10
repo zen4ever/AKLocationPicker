@@ -7,7 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
-@interface AKLocationPickerController : UIViewController
+@protocol AKLocationPickerSource <NSObject>
+
+@property (strong, nonatomic) NSDictionary *currentLocation;
+@property (strong, nonatomic) NSArray *items;
+
+@end
+
+
+@interface AKLocationPickerController : UIViewController<UITableViewDelegate, UISearchBarDelegate, MKAnnotation, MKMapViewDelegate>
+
+@property (strong, nonatomic) id<AKLocationPickerSource, UITableViewDataSource, UISearchDisplayDelegate> dataSource;
 
 @end

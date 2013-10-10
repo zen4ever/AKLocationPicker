@@ -13,7 +13,6 @@
 
 @interface AKAddressBookDataSource()
 
-@property (strong, nonatomic) NSArray *results;
 @property (strong, nonatomic, readonly) NSArray* addresses;
 @property (strong, nonatomic, readonly) RHAddressBook* addressBook;
 
@@ -23,6 +22,8 @@
 
 @synthesize addresses=_addresses;
 @synthesize addressBook=_addressBook;
+@synthesize currentLocation=_currentLocation;
+@synthesize items=_items;
 
 - (id)init {
     if (self = [super init]) {
@@ -51,7 +52,7 @@
                 
                 [tempAddresses addObject:@{
                     @"name": person.compositeName,
-                    @"value": [ABCreateStringWithAddressDictionary(address, YES) stringByReplacingOccurrencesOfString:@"\n" withString:@", "],
+                    @"address": [ABCreateStringWithAddressDictionary(address, YES) stringByReplacingOccurrencesOfString:@"\n" withString:@", "],
                 }];
             }
         }
@@ -60,8 +61,13 @@
     return _addresses;
 }
 
+- (void)configureCell:(UITableViewCell *)cell withItem:(NSDictionary *)item {
+    cell.textLabel.text = item[@"name"];
+    cell.detailTextLabel.text = item[@"address"];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.results.count;
+    return self.items.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -70,25 +76,31 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
     }
-    NSDictionary *result = self.results[indexPath.row];
-    cell.textLabel.text = result[@"name"];
-    cell.detailTextLabel.text = result[@"value"];
+    [self configureCell:cell withItem:self.items[indexPath.row]];
     return cell;
 }
 
 - (NSArray *)filteredArrayForText:(NSString *)text scope:(NSString *)scope {
-    NSPredicate *searchPredicate = [NSPredicate predicateWithFormat:@"(value CONTAINS[cd] $text)"];
+    NSPredicate *searchPredicate = [NSPredicate predicateWithFormat:@"(address CONTAINS[cd] $text)"];
     return [self.addresses filteredArrayUsingPredicate:[searchPredicate predicateWithSubstitutionVariables:@{@"text": text}]];
+}
+
+- (void)updateItemsWithObjects:(NSArray *)objects {
+    NSArray *newItems = [NSArray array];
+    if (self.currentLocation) {
+        newItems = [NSArray arrayWithObject:self.currentLocation];
+    }
+    self.items = [newItems arrayByAddingObjectsFromArray:objects];
 }
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption {
     NSString *searchString = controller.searchBar.text;
-    self.results = [self filteredArrayForText:searchString scope:nil];
+    [self updateItemsWithObjects:[self filteredArrayForText:searchString scope:nil]];
     return YES;
 }
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
-    self.results = [self filteredArrayForText:searchString scope:nil];
+    [self updateItemsWithObjects:[self filteredArrayForText:searchString scope:nil]];
     return YES;
 }
 

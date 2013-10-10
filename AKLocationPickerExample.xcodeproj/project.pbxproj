@@ -11,13 +11,7 @@
 		49EA1CB218049B7500237F10 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EA1CB118049B7500237F10 /* Foundation.framework */; };
 		49EA1CB418049B7500237F10 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EA1CB318049B7500237F10 /* CoreGraphics.framework */; };
 		49EA1CB618049B7500237F10 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EA1CB518049B7500237F10 /* UIKit.framework */; };
-		49EA1CBC18049B7500237F10 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49EA1CBA18049B7500237F10 /* InfoPlist.strings */; };
-		49EA1CBE18049B7500237F10 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EA1CBD18049B7500237F10 /* main.m */; };
-		49EA1CC218049B7500237F10 /* AKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EA1CC118049B7500237F10 /* AKAppDelegate.m */; };
-		49EA1CC518049B7500237F10 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49EA1CC318049B7500237F10 /* Main_iPhone.storyboard */; };
-		49EA1CC818049B7500237F10 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49EA1CC618049B7500237F10 /* Main_iPad.storyboard */; };
 		49EA1CCB18049B7500237F10 /* AKLocationPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EA1CCA18049B7500237F10 /* AKLocationPickerController.m */; };
-		49EA1CCD18049B7500237F10 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49EA1CCC18049B7500237F10 /* Images.xcassets */; };
 		49EA1CD418049B7500237F10 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EA1CD318049B7500237F10 /* XCTest.framework */; };
 		49EA1CD518049B7500237F10 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EA1CB118049B7500237F10 /* Foundation.framework */; };
 		49EA1CD618049B7500237F10 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EA1CB518049B7500237F10 /* UIKit.framework */; };
@@ -27,6 +21,13 @@
 		49EA1CEC1804AD2E00237F10 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EA1CEB1804AD2E00237F10 /* AddressBook.framework */; };
 		49EA1CF01804FA6B00237F10 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EA1CEF1804FA6B00237F10 /* AddressBookUI.framework */; };
 		49EA1CF31805E16400237F10 /* AKAddressBookDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EA1CF21805E16400237F10 /* AKAddressBookDataSource.m */; };
+		49EA1D07180651EA00237F10 /* AKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EA1CFC180651EA00237F10 /* AKAppDelegate.m */; };
+		49EA1D0B180651EA00237F10 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49EA1D03180651EA00237F10 /* InfoPlist.strings */; };
+		49EA1D0C180651EA00237F10 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49EA1D05180651EA00237F10 /* Images.xcassets */; };
+		49EA1D0D180651EA00237F10 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49EA1D06180651EA00237F10 /* main.m */; };
+		49F08705180653130073DCED /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49EA1CFF180651EA00237F10 /* Main_iPad.storyboard */; };
+		49F08706180653130073DCED /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49EA1D01180651EA00237F10 /* Main_iPhone.storyboard */; };
+		49F08708180686AF0073DCED /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F08707180686AF0073DCED /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,17 +45,8 @@
 		49EA1CB118049B7500237F10 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		49EA1CB318049B7500237F10 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		49EA1CB518049B7500237F10 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		49EA1CB918049B7500237F10 /* AKLocationPickerExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AKLocationPickerExample-Info.plist"; sourceTree = "<group>"; };
-		49EA1CBB18049B7500237F10 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		49EA1CBD18049B7500237F10 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		49EA1CBF18049B7500237F10 /* AKLocationPickerExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AKLocationPickerExample-Prefix.pch"; sourceTree = "<group>"; };
-		49EA1CC018049B7500237F10 /* AKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AKAppDelegate.h; sourceTree = "<group>"; };
-		49EA1CC118049B7500237F10 /* AKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AKAppDelegate.m; sourceTree = "<group>"; };
-		49EA1CC418049B7500237F10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		49EA1CC718049B7500237F10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		49EA1CC918049B7500237F10 /* AKLocationPickerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AKLocationPickerController.h; sourceTree = "<group>"; };
 		49EA1CCA18049B7500237F10 /* AKLocationPickerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AKLocationPickerController.m; sourceTree = "<group>"; };
-		49EA1CCC18049B7500237F10 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		49EA1CD218049B7500237F10 /* AKLocationPickerExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AKLocationPickerExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49EA1CD318049B7500237F10 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		49EA1CDB18049B7500237F10 /* AKLocationPickerExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AKLocationPickerExampleTests-Info.plist"; sourceTree = "<group>"; };
@@ -66,6 +58,16 @@
 		49EA1CEF1804FA6B00237F10 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		49EA1CF11805E16400237F10 /* AKAddressBookDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKAddressBookDataSource.h; sourceTree = "<group>"; };
 		49EA1CF21805E16400237F10 /* AKAddressBookDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKAddressBookDataSource.m; sourceTree = "<group>"; };
+		49EA1CFB180651EA00237F10 /* AKAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKAppDelegate.h; sourceTree = "<group>"; };
+		49EA1CFC180651EA00237F10 /* AKAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKAppDelegate.m; sourceTree = "<group>"; };
+		49EA1CFD180651EA00237F10 /* AKLocationPickerExample-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AKLocationPickerExample-Info.plist"; sourceTree = "<group>"; };
+		49EA1CFE180651EA00237F10 /* AKLocationPickerExample-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AKLocationPickerExample-Prefix.pch"; sourceTree = "<group>"; };
+		49EA1D00180651EA00237F10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		49EA1D02180651EA00237F10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		49EA1D04180651EA00237F10 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		49EA1D05180651EA00237F10 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		49EA1D06180651EA00237F10 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		49F08707180686AF0073DCED /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		990226FA454F44CF81154B86 /* Pods-AKLocationPicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AKLocationPicker.xcconfig"; path = "Pods/Pods-AKLocationPicker.xcconfig"; sourceTree = "<group>"; };
 		B189BC55589D4E178F4D0154 /* libPods-AKLocationPicker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AKLocationPicker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -75,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49F08708180686AF0073DCED /* CoreLocation.framework in Frameworks */,
 				49EA1CF01804FA6B00237F10 /* AddressBookUI.framework in Frameworks */,
 				49EA1CEC1804AD2E00237F10 /* AddressBook.framework in Frameworks */,
 				49EA1CEA18049C7000237F10 /* MapKit.framework in Frameworks */,
@@ -101,6 +104,7 @@
 		49EA1CA518049B7500237F10 = {
 			isa = PBXGroup;
 			children = (
+				49EA1CFA180651EA00237F10 /* AKLocationPickerExample */,
 				49EA1CB718049B7500237F10 /* AKLocationPicker */,
 				49EA1CD918049B7500237F10 /* AKLocationPickerTests */,
 				49EA1CB018049B7500237F10 /* Frameworks */,
@@ -121,6 +125,7 @@
 		49EA1CB018049B7500237F10 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				49F08707180686AF0073DCED /* CoreLocation.framework */,
 				49EA1CEF1804FA6B00237F10 /* AddressBookUI.framework */,
 				49EA1CED1804F5C700237F10 /* libPods-AKLocationPicker-RHAddressBook.a */,
 				49EA1CEB1804AD2E00237F10 /* AddressBook.framework */,
@@ -137,29 +142,12 @@
 		49EA1CB718049B7500237F10 /* AKLocationPicker */ = {
 			isa = PBXGroup;
 			children = (
-				49EA1CC018049B7500237F10 /* AKAppDelegate.h */,
-				49EA1CC118049B7500237F10 /* AKAppDelegate.m */,
-				49EA1CC318049B7500237F10 /* Main_iPhone.storyboard */,
-				49EA1CC618049B7500237F10 /* Main_iPad.storyboard */,
 				49EA1CC918049B7500237F10 /* AKLocationPickerController.h */,
 				49EA1CCA18049B7500237F10 /* AKLocationPickerController.m */,
-				49EA1CCC18049B7500237F10 /* Images.xcassets */,
-				49EA1CB818049B7500237F10 /* Supporting Files */,
 				49EA1CF11805E16400237F10 /* AKAddressBookDataSource.h */,
 				49EA1CF21805E16400237F10 /* AKAddressBookDataSource.m */,
 			);
 			path = AKLocationPicker;
-			sourceTree = "<group>";
-		};
-		49EA1CB818049B7500237F10 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				49EA1CB918049B7500237F10 /* AKLocationPickerExample-Info.plist */,
-				49EA1CBA18049B7500237F10 /* InfoPlist.strings */,
-				49EA1CBD18049B7500237F10 /* main.m */,
-				49EA1CBF18049B7500237F10 /* AKLocationPickerExample-Prefix.pch */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		49EA1CD918049B7500237F10 /* AKLocationPickerTests */ = {
@@ -178,6 +166,22 @@
 				49EA1CDC18049B7500237F10 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		49EA1CFA180651EA00237F10 /* AKLocationPickerExample */ = {
+			isa = PBXGroup;
+			children = (
+				49EA1CFB180651EA00237F10 /* AKAppDelegate.h */,
+				49EA1CFC180651EA00237F10 /* AKAppDelegate.m */,
+				49EA1CFD180651EA00237F10 /* AKLocationPickerExample-Info.plist */,
+				49EA1CFE180651EA00237F10 /* AKLocationPickerExample-Prefix.pch */,
+				49EA1CFF180651EA00237F10 /* Main_iPad.storyboard */,
+				49EA1D01180651EA00237F10 /* Main_iPhone.storyboard */,
+				49EA1D03180651EA00237F10 /* InfoPlist.strings */,
+				49EA1D05180651EA00237F10 /* Images.xcassets */,
+				49EA1D06180651EA00237F10 /* main.m */,
+			);
+			path = AKLocationPickerExample;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,10 +263,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49EA1CC818049B7500237F10 /* Main_iPad.storyboard in Resources */,
-				49EA1CCD18049B7500237F10 /* Images.xcassets in Resources */,
-				49EA1CC518049B7500237F10 /* Main_iPhone.storyboard in Resources */,
-				49EA1CBC18049B7500237F10 /* InfoPlist.strings in Resources */,
+				49F08705180653130073DCED /* Main_iPad.storyboard in Resources */,
+				49F08706180653130073DCED /* Main_iPhone.storyboard in Resources */,
+				49EA1D0C180651EA00237F10 /* Images.xcassets in Resources */,
+				49EA1D0B180651EA00237F10 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,9 +319,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				49EA1CF31805E16400237F10 /* AKAddressBookDataSource.m in Sources */,
-				49EA1CC218049B7500237F10 /* AKAppDelegate.m in Sources */,
+				49EA1D07180651EA00237F10 /* AKAppDelegate.m in Sources */,
 				49EA1CCB18049B7500237F10 /* AKLocationPickerController.m in Sources */,
-				49EA1CBE18049B7500237F10 /* main.m in Sources */,
+				49EA1D0D180651EA00237F10 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,34 +344,34 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		49EA1CBA18049B7500237F10 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				49EA1CBB18049B7500237F10 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		49EA1CC318049B7500237F10 /* Main_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				49EA1CC418049B7500237F10 /* Base */,
-			);
-			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		49EA1CC618049B7500237F10 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				49EA1CC718049B7500237F10 /* Base */,
-			);
-			name = Main_iPad.storyboard;
-			sourceTree = "<group>";
-		};
 		49EA1CDC18049B7500237F10 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				49EA1CDD18049B7500237F10 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		49EA1CFF180651EA00237F10 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49EA1D00180651EA00237F10 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		49EA1D01180651EA00237F10 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49EA1D02180651EA00237F10 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		49EA1D03180651EA00237F10 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49EA1D04180651EA00237F10 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -464,8 +468,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "AKLocationPicker/AKLocationPickerExample-Prefix.pch";
-				INFOPLIST_FILE = "AKLocationPicker/AKLocationPickerExample-Info.plist";
+				GCC_PREFIX_HEADER = "AKLocationPickerExample/AKLocationPickerExample-Prefix.pch";
+				INFOPLIST_FILE = "AKLocationPickerExample/AKLocationPickerExample-Info.plist";
 				PRODUCT_NAME = AKLocationPickerExample;
 				WRAPPER_EXTENSION = app;
 			};
@@ -478,8 +482,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "AKLocationPicker/AKLocationPickerExample-Prefix.pch";
-				INFOPLIST_FILE = "AKLocationPicker/AKLocationPickerExample-Info.plist";
+				GCC_PREFIX_HEADER = "AKLocationPickerExample/AKLocationPickerExample-Prefix.pch";
+				INFOPLIST_FILE = "AKLocationPickerExample/AKLocationPickerExample-Info.plist";
 				PRODUCT_NAME = AKLocationPickerExample;
 				WRAPPER_EXTENSION = app;
 			};
