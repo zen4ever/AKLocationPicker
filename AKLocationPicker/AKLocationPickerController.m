@@ -9,7 +9,6 @@
 #import "AKLocationPickerController.h"
 #import <CoreLocation/CoreLocation.h>
 #import <AddressBookUI/AddressBookUI.h>
-#import "AKAddressBookDataSource.h"
 
 @interface AKLocationPickerController ()
 
@@ -25,7 +24,7 @@
 @synthesize geocoder=_geocoder;
 
 - (id)initWithDataSource:(id<AKLocationPickerSource, UITableViewDataSource, UISearchDisplayDelegate>) dataSource {
-    if (self = [self init]) {
+    if (self = [super init]) {
         _dataSource = dataSource;
     }
     return self;
@@ -74,7 +73,6 @@
                                                    options:0
                                                    metrics:nil
                                                      views:views]];
-    self.dataSource = [[AKAddressBookDataSource alloc] init];
     searchDisplayController.searchResultsDelegate = self;
     searchDisplayController.searchResultsDataSource = self.dataSource;
     searchDisplayController.delegate = self.dataSource;

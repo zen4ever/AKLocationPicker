@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49E1CF681807535F008B4B3E /* AKAddressBookLocationPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E1CF671807535F008B4B3E /* AKAddressBookLocationPickerController.m */; };
 		49EA1CB218049B7500237F10 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EA1CB118049B7500237F10 /* Foundation.framework */; };
 		49EA1CB418049B7500237F10 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EA1CB318049B7500237F10 /* CoreGraphics.framework */; };
 		49EA1CB618049B7500237F10 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EA1CB518049B7500237F10 /* UIKit.framework */; };
@@ -43,6 +44,8 @@
 /* Begin PBXFileReference section */
 		25D937FF33BD4D5B978D1EB3 /* libPods-AKLocationPickerExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AKLocationPickerExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF3532C6CA143028FE4EF2F /* Pods-AKLocationPickerExample.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AKLocationPickerExample.xcconfig"; path = "Pods/Pods-AKLocationPickerExample.xcconfig"; sourceTree = "<group>"; };
+		49E1CF661807535F008B4B3E /* AKAddressBookLocationPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKAddressBookLocationPickerController.h; sourceTree = "<group>"; };
+		49E1CF671807535F008B4B3E /* AKAddressBookLocationPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKAddressBookLocationPickerController.m; sourceTree = "<group>"; };
 		49EA1CAE18049B7500237F10 /* AKLocationPickerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AKLocationPickerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49EA1CB118049B7500237F10 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		49EA1CB318049B7500237F10 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -184,6 +187,8 @@
 				49EA1D03180651EA00237F10 /* InfoPlist.strings */,
 				49EA1D05180651EA00237F10 /* Images.xcassets */,
 				49EA1D06180651EA00237F10 /* main.m */,
+				49E1CF661807535F008B4B3E /* AKAddressBookLocationPickerController.h */,
+				49E1CF671807535F008B4B3E /* AKAddressBookLocationPickerController.m */,
 			);
 			path = AKLocationPickerExample;
 			sourceTree = "<group>";
@@ -322,6 +327,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49E1CF681807535F008B4B3E /* AKAddressBookLocationPickerController.m in Sources */,
 				49EA1CF31805E16400237F10 /* AKAddressBookDataSource.m in Sources */,
 				49EA1D07180651EA00237F10 /* AKAppDelegate.m in Sources */,
 				49EA1CCB18049B7500237F10 /* AKLocationPickerController.m in Sources */,

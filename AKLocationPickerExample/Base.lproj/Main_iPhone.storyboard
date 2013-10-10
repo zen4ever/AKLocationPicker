@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
-        <!--Location Picker Controller-->
+        <!--Address Book Location Picker Controller-->
         <scene sceneID="wAe-Io-C4c">
             <objects>
-                <viewController id="T5J-VN-OkY" customClass="AKLocationPickerController" sceneMemberID="viewController">
+                <viewController id="T5J-VN-OkY" customClass="AKAddressBookLocationPickerController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vcv-J8-KOM"/>
                         <viewControllerLayoutGuide type="bottom" id="o2X-yf-dvn"/>
