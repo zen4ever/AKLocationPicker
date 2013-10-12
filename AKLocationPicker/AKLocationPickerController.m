@@ -12,9 +12,6 @@
 
 @interface AKLocationPickerController ()
 
-@property (nonatomic, strong) UISearchDisplayController *searchController;
-@property (nonatomic, strong) MKMapView *mapView;
-@property (nonatomic, strong) UISearchBar *searchBar;
 @property (nonatomic, strong, readonly) CLGeocoder *geocoder;
 
 @end
@@ -22,8 +19,9 @@
 @implementation AKLocationPickerController
 
 @synthesize geocoder=_geocoder;
+@synthesize currentLocation=_currentLocation;
 
-- (id)initWithDataSource:(id<AKLocationPickerSource, UITableViewDataSource, UISearchDisplayDelegate>) dataSource {
+- (id)initWithDataSource:(id<AKLocationPickerSource>) dataSource {
     if (self = [super init]) {
         _dataSource = dataSource;
     }
@@ -75,13 +73,13 @@
                                                      views:views]];
     searchDisplayController.searchResultsDelegate = self;
     searchDisplayController.searchResultsDataSource = self.dataSource;
-    searchDisplayController.delegate = self.dataSource;
+    searchDisplayController.delegate = self;
     [mapView setShowsUserLocation:YES];
     mapView.delegate = self;
 }
 
 - (void)dropPinForLocation:(NSDictionary *)location {
-    self.dataSource.currentLocation = location;
+    self.currentLocation = location;
     for (id annotation in self.mapView.annotations) {
         [self.mapView deselectAnnotation:annotation animated:YES];
     }
@@ -141,14 +139,14 @@
 }
 
 - (CLLocationCoordinate2D)coordinate {
-    return [(CLLocation *)self.dataSource.currentLocation[@"location"] coordinate];
+    return [(CLLocation *)self.currentLocation[@"location"] coordinate];
 }
 
 - (void)setCoordinate:(CLLocationCoordinate2D)newCoordinate {
     CLLocation *newLocation = [[CLLocation alloc] initWithLatitude:newCoordinate.latitude longitude:newCoordinate.longitude];
-    NSMutableDictionary *newCurrentLocation = [self.dataSource.currentLocation mutableCopy];
+    NSMutableDictionary *newCurrentLocation = [self.currentLocation mutableCopy];
     newCurrentLocation[@"location"] = newLocation;
-    self.dataSource.currentLocation = [newCurrentLocation copy];
+    self.currentLocation = [newCurrentLocation copy];
     [self.geocoder reverseGeocodeLocation:newLocation completionHandler:^(NSArray *placemarks, NSError *error) {
         if (placemarks.count > 0) {
             CLPlacemark *placemark = placemarks[0];
@@ -157,7 +155,7 @@
                  @"address": [ABCreateStringWithAddressDictionary(placemark.addressDictionary, YES) stringByReplacingOccurrencesOfString:@"\n" withString:@", "],
                  @"location": newLocation,
             };
-            self.dataSource.currentLocation = currentLocation;
+            self.currentLocation = currentLocation;
         }
     }];
 }
@@ -193,15 +191,15 @@
 }
 
 - (NSString *)title {
-    return self.dataSource.currentLocation[@"name"];
+    return self.currentLocation[@"name"];
 }
 
 - (NSString *)subtitle {
-    return self.dataSource.currentLocation[@"address"];
+    return self.currentLocation[@"address"];
 }
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
-    if (!self.dataSource.currentLocation) {
+    if (!self.currentLocation) {
         MKCoordinateSpan span = MKCoordinateSpanMake(0.01, 0.01);
         MKCoordinateRegion region = MKCoordinateRegionMake(userLocation.coordinate, span);
         [self.mapView setRegion:region animated:YES];
@@ -224,5 +222,25 @@
     }
     return nil;
 }
+
+- (NSArray *)updateItems:(NSArray *)items {
+    NSArray *newItems = [NSArray array];
+    if (self.currentLocation) {
+        newItems = [NSArray arrayWithObject:self.currentLocation];
+    }
+    return [newItems arrayByAddingObjectsFromArray:items];
+}
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption {
+    NSString *searchString = controller.searchBar.text;
+    self.dataSource.items = [self updateItems:[self.dataSource filteredArrayForText:searchString scope:nil]];
+    return YES;
+}
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
+    self.dataSource.items = [self updateItems:[self.dataSource filteredArrayForText:searchString scope:nil]];
+    return YES;
+}
+
 
 @end

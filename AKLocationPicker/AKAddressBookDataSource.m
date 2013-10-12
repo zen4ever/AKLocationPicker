@@ -22,7 +22,6 @@
 
 @synthesize addresses=_addresses;
 @synthesize addressBook=_addressBook;
-@synthesize currentLocation=_currentLocation;
 @synthesize items=_items;
 
 - (id)init {
@@ -83,25 +82,6 @@
 - (NSArray *)filteredArrayForText:(NSString *)text scope:(NSString *)scope {
     NSPredicate *searchPredicate = [NSPredicate predicateWithFormat:@"(address CONTAINS[cd] $text)"];
     return [self.addresses filteredArrayUsingPredicate:[searchPredicate predicateWithSubstitutionVariables:@{@"text": text}]];
-}
-
-- (void)updateItemsWithObjects:(NSArray *)objects {
-    NSArray *newItems = [NSArray array];
-    if (self.currentLocation) {
-        newItems = [NSArray arrayWithObject:self.currentLocation];
-    }
-    self.items = [newItems arrayByAddingObjectsFromArray:objects];
-}
-
-- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption {
-    NSString *searchString = controller.searchBar.text;
-    [self updateItemsWithObjects:[self filteredArrayForText:searchString scope:nil]];
-    return YES;
-}
-
-- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
-    [self updateItemsWithObjects:[self filteredArrayForText:searchString scope:nil]];
-    return YES;
 }
 
 @end
