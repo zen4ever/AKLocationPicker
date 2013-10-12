@@ -21,7 +21,8 @@ Just create a AKLocationPickerController with your data source. Optionally, you
 can specify initial location.
 
 ```smalltalk
-AKLocationPickerController *locationPicker = [[AKLocationPickerController alloc] initWithDataSource:[[AKAddressBookDataSource alloc] init]];
+AKLocationPickerController *locationPicker = [[AKLocationPickerController alloc]
+    initWithDataSource:[[AKAddressBookDataSource alloc] init]];
 locationPicker.currentLocation = @{
     @"name": @"Farmers Market",
     @"address": @"6333 W 3rd St  Los Angeles, CA 90036",
