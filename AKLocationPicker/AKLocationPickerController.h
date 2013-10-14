@@ -10,19 +10,27 @@
 #import <MapKit/MapKit.h>
 
 @protocol AKLocationPickerSource <NSObject, UITableViewDataSource>
-
+@required
 @property (strong, nonatomic) NSArray *items;
 - (NSArray *)filteredArrayForText:(NSString *)text scope:(NSString *)scope;
+@end
+
+@protocol AKLocationPickerDelegate <NSObject>
+@required
+
+- (void)selectedNewLocation:(NSDictionary *)location;
+
 @end
 
 
 @interface AKLocationPickerController : UIViewController<UITableViewDelegate, UISearchBarDelegate, MKAnnotation, MKMapViewDelegate, UISearchDisplayDelegate>
 
-@property (nonatomic, strong) id<AKLocationPickerSource> dataSource;
+@property (nonatomic, weak) id<AKLocationPickerSource> dataSource;
 @property (nonatomic, strong) UISearchDisplayController *searchController;
 @property (nonatomic, strong) MKMapView *mapView;
 @property (nonatomic, strong) UISearchBar *searchBar;
 @property (nonatomic, strong) NSDictionary *currentLocation;
+@property (nonatomic, weak) id<AKLocationPickerDelegate> delegate;
 
 - (id)initWithDataSource:(id<AKLocationPickerSource>) dataSource;
 

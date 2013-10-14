@@ -27,7 +27,12 @@
 - (id)init {
     if (self = [super init]) {
         if ([RHAddressBook authorizationStatus] == RHAuthorizationStatusNotDetermined) {
-            [self.addressBook requestAuthorizationWithCompletion:nil];
+            [self.addressBook requestAuthorizationWithCompletion:^(bool granted, NSError *error) {
+                if (granted) {
+                    _addressBook = nil;
+                    _addresses = nil;
+                }
+            }];
         }
     }
     return self;

@@ -7,7 +7,6 @@
 //
 
 #import "AKAddressBookLocationPickerController.h"
-#import "AKAddressBookDataSource.h"
 
 @interface AKAddressBookLocationPickerController ()
 
@@ -25,7 +24,8 @@
 }
 
 - (void)awakeFromNib {
-    self.dataSource = [[AKAddressBookDataSource alloc] init];
+    self.addressBookDataSource = [[AKAddressBookDataSource alloc] init];
+    self.dataSource = self.addressBookDataSource;
 }
 
 @end

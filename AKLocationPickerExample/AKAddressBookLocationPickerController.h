@@ -7,7 +7,10 @@
 //
 
 #import "AKLocationPickerController.h"
+#import "AKAddressBookDataSource.h"
 
 @interface AKAddressBookLocationPickerController : AKLocationPickerController
+
+@property (nonatomic, strong) AKAddressBookDataSource *addressBookDataSource;
 
 @end

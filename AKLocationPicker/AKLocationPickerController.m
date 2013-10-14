@@ -242,5 +242,9 @@
     return YES;
 }
 
+- (void)setCurrentLocation:(NSDictionary *)currentLocation {
+    _currentLocation = currentLocation;
+    [self.delegate selectedNewLocation:currentLocation];
+}
 
 @end
