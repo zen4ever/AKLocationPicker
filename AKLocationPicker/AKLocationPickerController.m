@@ -254,4 +254,35 @@
     [self.delegate selectedNewLocation:currentLocation];
 }
 
+// Fixes for UISearchDisplayController when displayed in UIPopoverController
+// Taken from article by Peter Steinberger
+// http://petersteinberger.com/blog/2013/fixing-uisearchdisplaycontroller-on-ios-7/
+
+- (void)setAllViewsExceptSearchHidden:(BOOL)hidden animated:(BOOL)animated {
+    [UIView animateWithDuration:animated ? 0.25f : 0.f animations:^{
+        for (UIView *view in self.view.subviews) {
+            if (view != self.searchDisplayController.searchResultsTableView &&
+                view != self.searchDisplayController.searchBar) {
+                view.alpha = hidden ? 0.f : 1.f;
+            }
+        }
+    }];
+}
+
+- (void)correctFramesForSearchDisplayControllerBeginSearch:(BOOL)beginSearch {
+    [self.navigationController setNavigationBarHidden:beginSearch animated:YES];
+    [self setAllViewsExceptSearchHidden:beginSearch animated:YES];
+    [UIView animateWithDuration:0.25f animations:^{
+        self.searchDisplayController.searchResultsTableView.alpha = beginSearch ? 1.f : 0.f;
+    }];
+}
+
+- (void)searchDisplayControllerWillBeginSearch:(UISearchDisplayController *)controller {
+    [self correctFramesForSearchDisplayControllerBeginSearch:YES];
+}
+
+- (void)searchDisplayControllerWillEndSearch:(UISearchDisplayController *)controller {
+    [self correctFramesForSearchDisplayControllerBeginSearch:NO];
+}
+
 @end
