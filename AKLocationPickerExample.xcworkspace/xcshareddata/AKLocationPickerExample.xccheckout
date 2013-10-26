@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>63DD01AA-7515-4CE9-BC2E-A22FD52FD7D1</string>
+	<key>IDESourceControlProjectName</key>
+	<string>AKLocationPickerExample</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>2158D8DF-3DA2-46B0-B624-61B1DB7365DB</key>
+		<string>ssh://github.com/zen4ever/AKLocationPicker.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>AKLocationPickerExample.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>2158D8DF-3DA2-46B0-B624-61B1DB7365DB</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/zen4ever/AKLocationPicker.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>2158D8DF-3DA2-46B0-B624-61B1DB7365DB</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2158D8DF-3DA2-46B0-B624-61B1DB7365DB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>AKLocationPicker</string>
+		</dict>
+	</array>
+</dict>
+</plist>

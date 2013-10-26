@@ -76,10 +76,10 @@
     searchDisplayController.delegate = self;
     [mapView setShowsUserLocation:YES];
     mapView.delegate = self;
+    [self displayCurrentLocation];
 }
 
 - (void)dropPinForLocation:(NSDictionary *)location {
-    self.currentLocation = location;
     for (id annotation in self.mapView.annotations) {
         [self.mapView deselectAnnotation:annotation animated:YES];
     }
@@ -92,13 +92,19 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSDictionary *currentLocation = self.dataSource.items[indexPath.row];
-    if (currentLocation[@"location"]) {
-        [self dropPinForLocation:currentLocation];
-    } else {
-        [self updateLocationFromAddress:currentLocation[@"address"]];
-    }
+    self.currentLocation = self.dataSource.items[indexPath.row];
+    [self displayCurrentLocation];
     [self.searchController setActive:NO animated:YES];
+}
+
+- (void)displayCurrentLocation {
+    if (self.currentLocation) {
+        if (self.currentLocation[@"location"]) {
+            [self dropPinForLocation:self.currentLocation];
+        } else {
+            [self updateLocationFromAddress:self.currentLocation[@"address"] name:self.currentLocation[@"name"]];
+        }
+    }
 }
 
 - (CLGeocoder *)geocoder {
@@ -108,7 +114,7 @@
     return _geocoder;
 }
 
-- (void)updateLocationFromAddress:(NSString *)address {
+- (void)updateLocationFromAddress:(NSString *)address name:(NSString *)name {
     [self.geocoder geocodeAddressString:address completionHandler:^(NSArray *placemarks, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (error) {
@@ -122,19 +128,20 @@
             }
             if (placemarks.count > 0) {
                 CLPlacemark *placemark = placemarks[0];
-                NSDictionary *currentLocation = @{
-                     @"name": placemark.thoroughfare ? placemark.thoroughfare : address,
+                NSString *newName = name ? name : (placemark.thoroughfare ? placemark.thoroughfare : address);
+                self.currentLocation = @{
+                     @"name": newName,
                      @"address": [ABCreateStringWithAddressDictionary(placemark.addressDictionary, YES) stringByReplacingOccurrencesOfString:@"\n" withString:@", "],
                      @"location": placemark.location,
                 };
-                [self dropPinForLocation:currentLocation];
+                [self dropPinForLocation:self.currentLocation];
             }
         });
     }];
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-    [self updateLocationFromAddress:searchBar.text];
+    [self updateLocationFromAddress:searchBar.text name:nil];
     [self.searchController setActive:NO animated:YES];
 }
 
@@ -165,12 +172,12 @@
    [self.geocoder reverseGeocodeLocation:newLocation completionHandler:^(NSArray *placemarks, NSError *error) {
     if (placemarks.count > 0) {
         CLPlacemark *placemark = placemarks[0];
-        NSDictionary *currentLocation = @{
+        self.currentLocation = @{
              @"name": placemark.thoroughfare ? placemark.thoroughfare : @"",
              @"address": [ABCreateStringWithAddressDictionary(placemark.addressDictionary, YES) stringByReplacingOccurrencesOfString:@"\n" withString:@", "],
              @"location": newLocation,
         };
-        [self dropPinForLocation:currentLocation];
+        [self dropPinForLocation:self.currentLocation];
     }
    }];
     
