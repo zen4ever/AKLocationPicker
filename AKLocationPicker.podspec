@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "AKLocationPicker"
-  s.version      = "1.0.2"
+  s.version      = "1.0.3"
   s.summary      = "A controller which allows user to pick location from a map."
 
   s.description  = <<-DESC
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 
   s.author       = { "Andrii Kurinnyi" => "andrew@marpasoft.com" }
   s.platform     = :ios, '7.0'
-  s.source       = { :git => "https://github.com/zen4ever/AKLocationPicker.git", :tag => "1.0.2" }
+  s.source       = { :git => "https://github.com/zen4ever/AKLocationPicker.git", :tag => "1.0.3" }
 
   s.source_files  = 'AKLocationPicker/*.{h,m}'
 
