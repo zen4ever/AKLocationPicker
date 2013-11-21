@@ -84,7 +84,7 @@
     return cell;
 }
 
-- (NSArray *)filteredArrayForText:(NSString *)text scope:(NSString *)scope {
+- (NSArray *)filteredArrayForText:(NSString *)text {
     NSPredicate *searchPredicate = [NSPredicate predicateWithFormat:@"(address CONTAINS[cd] $text)"];
     return [self.addresses filteredArrayUsingPredicate:[searchPredicate predicateWithSubstitutionVariables:@{@"text": text}]];
 }

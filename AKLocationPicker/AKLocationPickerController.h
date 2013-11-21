@@ -12,7 +12,9 @@
 @protocol AKLocationPickerSource <NSObject, UITableViewDataSource>
 @required
 @property (strong, nonatomic) NSArray *items;
-- (NSArray *)filteredArrayForText:(NSString *)text scope:(NSString *)scope;
+@optional
+- (NSArray *)filteredArrayForText:(NSString *)text;
+- (void)searchWithString:(NSString *)searchString completion:(void(^)(NSArray *results))completionHandler;
 @end
 
 @protocol AKLocationPickerDelegate <NSObject>

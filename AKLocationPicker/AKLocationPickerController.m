@@ -180,7 +180,6 @@
         [self dropPinForLocation:self.currentLocation];
     }
    }];
-    
 }
 
 - (void)handleLongPress:(UIGestureRecognizer *)gestureRecognizer {
@@ -230,23 +229,43 @@
     return nil;
 }
 
-- (NSArray *)updateItems:(NSArray *)items {
+- (NSArray *)updateWithCurrentLocation:(NSArray *)items {
     NSArray *newItems = [NSArray array];
     if (self.currentLocation) {
-        newItems = [NSArray arrayWithObject:self.currentLocation];
+        newItems = @[self.currentLocation];
     }
     return [newItems arrayByAddingObjectsFromArray:items];
 }
 
+- (BOOL)searchWithString:(NSString *)searchString {
+    if (searchString.length > 0) {
+        if ([self.dataSource respondsToSelector:@selector(filteredArrayForText:)]) {
+            self.dataSource.items = [self updateWithCurrentLocation:[self.dataSource filteredArrayForText:searchString]];
+            return YES;
+        } else {
+            [self.dataSource searchWithString:searchString completion:^(NSArray *results){
+                self.dataSource.items = [self updateWithCurrentLocation:results];
+                [self.searchController.searchResultsTableView reloadData];
+            }];
+            return NO;
+        }
+    } else {
+        if (self.currentLocation) {
+            self.dataSource.items = @[self.currentLocation];
+        } else {
+            self.dataSource.items = @[];
+        }
+        return YES;
+    }
+}
+
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption {
     NSString *searchString = controller.searchBar.text;
-    self.dataSource.items = [self updateItems:[self.dataSource filteredArrayForText:searchString scope:nil]];
-    return YES;
+    return [self searchWithString:searchString];
 }
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
-    self.dataSource.items = [self updateItems:[self.dataSource filteredArrayForText:searchString scope:nil]];
-    return YES;
+    return [self searchWithString:searchString];
 }
 
 - (void)setCurrentLocation:(NSDictionary *)currentLocation {

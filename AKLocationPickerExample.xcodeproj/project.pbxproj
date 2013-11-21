@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49C362F7183DF596009547F9 /* AKGooglePlacesDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C362F6183DF596009547F9 /* AKGooglePlacesDataSource.m */; };
+		49C362FA183DF98E009547F9 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C362F9183DF98E009547F9 /* NSString+URLEncoding.m */; };
+		49C362FD183E0150009547F9 /* AKGooglePlacesPickerControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49C362FC183E0150009547F9 /* AKGooglePlacesPickerControllerViewController.m */; };
 		49E1CF681807535F008B4B3E /* AKAddressBookLocationPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E1CF671807535F008B4B3E /* AKAddressBookLocationPickerController.m */; };
 		49EA1CB218049B7500237F10 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EA1CB118049B7500237F10 /* Foundation.framework */; };
 		49EA1CB418049B7500237F10 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EA1CB318049B7500237F10 /* CoreGraphics.framework */; };
@@ -44,6 +47,12 @@
 /* Begin PBXFileReference section */
 		25D937FF33BD4D5B978D1EB3 /* libPods-AKLocationPickerExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AKLocationPickerExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FF3532C6CA143028FE4EF2F /* Pods-AKLocationPickerExample.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AKLocationPickerExample.xcconfig"; path = "Pods/Pods-AKLocationPickerExample.xcconfig"; sourceTree = "<group>"; };
+		49C362F5183DF596009547F9 /* AKGooglePlacesDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKGooglePlacesDataSource.h; sourceTree = "<group>"; };
+		49C362F6183DF596009547F9 /* AKGooglePlacesDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKGooglePlacesDataSource.m; sourceTree = "<group>"; };
+		49C362F8183DF98E009547F9 /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
+		49C362F9183DF98E009547F9 /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncoding.m"; sourceTree = "<group>"; };
+		49C362FB183E0150009547F9 /* AKGooglePlacesPickerControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKGooglePlacesPickerControllerViewController.h; sourceTree = "<group>"; };
+		49C362FC183E0150009547F9 /* AKGooglePlacesPickerControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKGooglePlacesPickerControllerViewController.m; sourceTree = "<group>"; };
 		49E1CF661807535F008B4B3E /* AKAddressBookLocationPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKAddressBookLocationPickerController.h; sourceTree = "<group>"; };
 		49E1CF671807535F008B4B3E /* AKAddressBookLocationPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKAddressBookLocationPickerController.m; sourceTree = "<group>"; };
 		49EA1CAE18049B7500237F10 /* AKLocationPickerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AKLocationPickerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +162,10 @@
 				49EA1CCA18049B7500237F10 /* AKLocationPickerController.m */,
 				49EA1CF11805E16400237F10 /* AKAddressBookDataSource.h */,
 				49EA1CF21805E16400237F10 /* AKAddressBookDataSource.m */,
+				49C362F5183DF596009547F9 /* AKGooglePlacesDataSource.h */,
+				49C362F6183DF596009547F9 /* AKGooglePlacesDataSource.m */,
+				49C362F8183DF98E009547F9 /* NSString+URLEncoding.h */,
+				49C362F9183DF98E009547F9 /* NSString+URLEncoding.m */,
 			);
 			path = AKLocationPicker;
 			sourceTree = "<group>";
@@ -189,6 +202,8 @@
 				49EA1D06180651EA00237F10 /* main.m */,
 				49E1CF661807535F008B4B3E /* AKAddressBookLocationPickerController.h */,
 				49E1CF671807535F008B4B3E /* AKAddressBookLocationPickerController.m */,
+				49C362FB183E0150009547F9 /* AKGooglePlacesPickerControllerViewController.h */,
+				49C362FC183E0150009547F9 /* AKGooglePlacesPickerControllerViewController.m */,
 			);
 			path = AKLocationPickerExample;
 			sourceTree = "<group>";
@@ -328,9 +343,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				49E1CF681807535F008B4B3E /* AKAddressBookLocationPickerController.m in Sources */,
+				49C362F7183DF596009547F9 /* AKGooglePlacesDataSource.m in Sources */,
 				49EA1CF31805E16400237F10 /* AKAddressBookDataSource.m in Sources */,
+				49C362FD183E0150009547F9 /* AKGooglePlacesPickerControllerViewController.m in Sources */,
 				49EA1D07180651EA00237F10 /* AKAppDelegate.m in Sources */,
 				49EA1CCB18049B7500237F10 /* AKLocationPickerController.m in Sources */,
+				49C362FA183DF98E009547F9 /* NSString+URLEncoding.m in Sources */,
 				49EA1D0D180651EA00237F10 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

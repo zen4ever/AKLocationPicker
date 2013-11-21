@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="T5J-VN-OkY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="RRj-7p-jxy">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
         <!--Address Book Location Picker Controller-->
@@ -13,16 +13,58 @@
                         <viewControllerLayoutGuide type="bottom" id="o2X-yf-dvn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Nc3-4P-2yy">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" systemItem="contacts" id="xob-Vt-QWe"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ppE-jw-7Vg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1877" y="26"/>
+        </scene>
+        <!--Google Places Picker Controller View Controller - Google Places-->
+        <scene sceneID="fF8-In-pFx">
+            <objects>
+                <viewController id="esX-8d-zj1" customClass="AKGooglePlacesPickerControllerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YbH-Qv-WyN"/>
+                        <viewControllerLayoutGuide type="bottom" id="wBL-14-Kgs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CQJ-fh-f5i">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Google Places" image="59_Pushpin-(alt)" id="XLP-sh-lkE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YOD-pA-Pxh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1877" y="728"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="cAY-UI-g0L">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="RRj-7p-jxy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="aof-fG-24d">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="T5J-VN-OkY" kind="relationship" relationship="viewControllers" id="2QE-xz-W6i"/>
+                        <segue destination="esX-8d-zj1" kind="relationship" relationship="viewControllers" id="1yO-89-rS5"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ya9-yb-4Kf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1351" y="26"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="59_Pushpin-(alt)" width="25" height="25"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
