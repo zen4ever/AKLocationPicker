@@ -40,7 +40,6 @@
         NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data
                                                              options:kNilOptions
                                                                 error:&error];
-        NSLog(@"JSON: %@", json);
         NSArray* places = json[@"predictions"];
         NSMutableArray *results = [[NSMutableArray alloc] initWithCapacity:places.count];
         for (NSDictionary *place in places) {
